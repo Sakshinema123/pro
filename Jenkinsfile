@@ -91,7 +91,7 @@ pipeline {
 
 stage('deploy'){
 	steps{
-		deploy adapters: [tomcat9(credentialsId: '9f6ea6f1-7bf8-4ab9-87cc-9a36064f547e', path: '', url: 'http://localhost:8080/')], contextPath: 'pipelineresto', war: '**/*.war'
+		deploy adapters: [tomcat9(credentialsId: '772d2f0e-6831-40b2-86a2-397aef24fe0b', path: '', url: 'http://localhost:8080/')], contextPath: 'pipelineresto', war: '**/*.war'
 	}
 }
 
