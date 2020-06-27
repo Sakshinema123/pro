@@ -17,13 +17,13 @@ pipeline {
                 bat "mvn clean compile" 
         }
     }
-	stage("build & SonarQube analysis-----") {
-            steps {
-              withSonarQubeEnv('resto') {
-                bat 'mvn clean package sonar:sonar'
-              }
-            }
-			}
+	// stage("build & SonarQube analysis-----") {
+    //         steps {
+    //           withSonarQubeEnv('resto') {
+    //             bat 'mvn clean package sonar:sonar'
+    //           }
+    //         }
+	// 		}
 
  //         stage('testing stage') {
  //             steps {
@@ -89,11 +89,11 @@ pipeline {
 //             }
 //         }
 
-// stage('deploy'){
-// 	steps{
-// 		deploy adapters: [tomcat9(credentialsId: '3eb4bab4-7823-437a-b746-960e2f380ba5', path: '', url: 'http://localhost:1234/')], contextPath: 'PipelinePizzaBot', war: '**/*.war'
-// 	}
-// }
+stage('deploy'){
+	steps{
+		deploy adapters: [tomcat9(credentialsId: '9f6ea6f1-7bf8-4ab9-87cc-9a36064f547e', path: '', url: 'http://localhost:8080/')], contextPath: 'pipelineresto', war: '**/*.war'
+	}
+}
 
   }
  
