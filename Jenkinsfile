@@ -19,7 +19,7 @@ pipeline {
     }
 	stage("build & SonarQube analysis-----") {
             steps {
-              withSonarQubeEnv('Sonar') {
+              withSonarQubeEnv('resto') {
                 bat 'mvn clean package sonar:sonar'
               }
             }
