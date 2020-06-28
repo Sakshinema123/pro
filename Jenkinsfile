@@ -17,13 +17,13 @@ pipeline {
                 bat "mvn clean compile" 
         }
     }
-	// stage("build & SonarQube analysis-----") {
- //            steps {
- //              withSonarQubeEnv('Sonar') {
- //                bat 'mvn clean package sonar:sonar'
- //              }
- //            }
-	// 		}
+	stage("build & SonarQube analysis-----") {
+            steps {
+              withSonarQubeEnv('restoo') {
+                bat 'mvn clean package sonar:sonar'
+              }
+            }
+			}
 
  //         stage('testing stage') {
  //             steps {
