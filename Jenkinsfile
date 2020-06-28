@@ -23,7 +23,7 @@ pipeline {
                 bat 'mvn clean package sonar:sonar'
               }
             }
-			}
+    }
 
  //         stage('testing stage') {
  //             steps {
