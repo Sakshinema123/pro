@@ -4,13 +4,13 @@ pipeline {
     tools {
         maven 'MAVEN' 
     }
-    //  environment {
-    //  	NEXUS_VERSION = "nexus3"
-    //  	NEXUS_PROTOCOL = "http"
-    //  	NEXUS_URL = "localhost:8081"
-    //  	NEXUS_REPOSITORY = "pipeline"
-    //  	NEXUS_CREDENTIAL_ID = "c9c91444-d1b3-4b1a-a013-ff0404fd4c2a"
-    //  }
+    // environment {
+    // 	NEXUS_VERSION = "nexus3"
+    // 	NEXUS_PROTOCOL = "http"
+    // 	NEXUS_URL = "localhost:8081"
+    // 	NEXUS_REPOSITORY = "Pipeline"
+    // 	NEXUS_CREDENTIAL_ID = "1cdb8165-4cef-40e3-9883-758c30c0b791"
+    // }
     stages {
         stage('Compile stage') {
             steps {
@@ -18,11 +18,11 @@ pipeline {
         }
     }
 	// stage("build & SonarQube analysis-----") {
-    //         steps {
-    //           withSonarQubeEnv('resto') {
-    //             bat 'mvn clean package sonar:sonar'
-    //           }
-    //         }
+ //            steps {
+ //              withSonarQubeEnv('Sonar') {
+ //                bat 'mvn clean package sonar:sonar'
+ //              }
+ //            }
 	// 		}
 
  //         stage('testing stage') {
@@ -89,11 +89,11 @@ pipeline {
 //             }
 //         }
 
-stage('deploy'){
-	steps{
-		deploy adapters: [tomcat9(credentialsId: '772d2f0e-6831-40b2-86a2-397aef24fe0b', path: '', url: 'http://localhost:8080/')], contextPath: 'pipelineresto', war: '**/*.war'
-	}
-}
+// stage('deploy'){
+// 	steps{
+// 		deploy adapters: [tomcat9(credentialsId: '3eb4bab4-7823-437a-b746-960e2f380ba5', path: '', url: 'http://localhost:1234/')], contextPath: 'PipelinePizzaBot', war: '**/*.war'
+// 	}
+// }
 
   }
  
